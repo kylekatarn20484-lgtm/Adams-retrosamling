@@ -109,3 +109,74 @@ I `src/App.tsx` används relativa adresser till API:t:
 const API_URL = "/api.php";
 const UPLOAD_URL = "/upload.php";
 
+### Steg 4 – Lösenord
+
+Öppna api.php och leta upp raden:
+$PASSWORD = 'byt-mig';
+
+Ändra till ett eget lösenord, t.ex.:
+$PASSWORD = 'EttRiktigtStarktLösenord123!';
+
+Detta lösenord används för att logga in i webbgränssnittet.
+
+Alla som kör sin egen kopia av projektet bör ändra lösenordet.
+
+### Steg 5 – Användning
+
+	1.	Gå till din domän i webbläsaren.
+	2.	Logga in med lösenordet du ställde in i api.php.
+	3.	Börja lägga till prylar, spel och datorbyggen.
+	4.	Ladda upp bilder – de lagras i uploads/.
+
+  Export och import
+
+Export
+
+Via knappen Exportera laddas en JSON-fil ner med:
+	•	alla prylar
+	•	alla spel
+	•	alla datorbyggen
+
+(observera: bildfilerna följer inte med – endast länkar till dem)
+
+Backup
+
+För en komplett backup:
+	•	spara exporterad JSON-fil
+	•	kopiera hela mappen uploads/
+
+Återställning / flytt
+
+För att flytta samlingen till ny server:
+	1.	Ladda upp koden (index.html, assets, api.php, upload.php)
+	2.	Kopiera över uploads/
+	3.	Importera JSON-filen via Importera i gränssnittet
+eller klistra in innehållet direkt i data.json.
+
+Uppdatera / bygga projektet
+
+Endast nödvändigt om du vill ändra i källkoden.
+
+Installera beroenden
+npm install
+
+Köra lokalt
+npm run dev
+
+Bygga produktion
+npm run build
+
+Efter build:
+	•	mappen dist/ innehåller färdig frontend
+	•	kopiera innehållet till deploy/ tillsammans med:
+	•	api.php
+	•	upload.php
+	•	data.json
+	•	uploads/
+
+  Prestanda och skalning
+
+Ungefärliga riktvärden:
+	•	0–2 000 objekt: mycket snabbt, även på mobil
+	•	2–5 000 objekt: fullt användbart, något längre laddningar kan märkas
+	•	5 000+ objekt: fungerar, men kan börja kännas tungt – då rekommenderas att byta till riktig databaslösning
