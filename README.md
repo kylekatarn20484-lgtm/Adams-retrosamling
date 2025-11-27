@@ -108,8 +108,10 @@ I `src/App.tsx` används relativa adresser till API:t:
 ```ts
 const API_URL = "/api.php";
 const UPLOAD_URL = "/upload.php";
+```
+---
 
-### Steg 4 – Lösenord
+### **Steg 4 – Lösenord**
 
 Öppna api.php och leta upp raden:
 $PASSWORD = 'byt-mig';
@@ -121,7 +123,9 @@ Detta lösenord används för att logga in i webbgränssnittet.
 
 Alla som kör sin egen kopia av projektet bör ändra lösenordet.
 
-### Steg 5 – Användning
+---
+
+### **Steg 5 – Användning**
 
 	1.	Gå till din domän i webbläsaren.
 	2.	Logga in med lösenordet du ställde in i api.php.
