@@ -4,7 +4,25 @@ Alla större ändringar i **Adams retrosamling** dokumenteras här.
 
 Formatet följer ungefär *Keep a Changelog* och semantisk versionshantering.
 
----
+## [3.2.0] - 2025-12-05
+
+### Added
+- Stöd för massuppladdning av bilder till bildbiblioteket direkt från formuläret för att lägga till prylar.
+- Automatisk bildkomprimering i webbläsaren innan uppladdning för att hålla filstorlekar nere och minska risken för timeout.
+- Bildbiblioteket hämtas automatiskt från serverns `uploads/`-mapp via `list_uploads.php` och synkas med localStorage.
+- Möjlighet att återanvända redan uppladdade bilder när man skapar eller redigerar prylar och datorbyggen.
+
+### Changed
+- Förbättrad mobilvy: paneler och prylkort fyller nu skärmens bredd bättre och är visuellt mer centrerade.
+- Justerad padding i `.app-container` på små skärmar för att minska onödig sidomarginal.
+- Knapparna _“Välj bland befintliga bilder…”_ och _“Massuppladda bilder…”_ ligger nu bredvid varandra och är lika stora för en mer balanserad layout.
+- Layouten för bildknapparna styrs nu via CSS (`.image-picker-inline-actions`) istället för inline-styles i React-komponenten.
+
+### Fixed
+- Ett fel där massuppladdade bilder försvann från bildbiblioteket efter att sidan laddats om.
+- Extra tomrad i listvyn under raden _“X av Y prylar visas”_ är borttagen.
+- Mindre visuella glitchar relaterade till knappmarginaler och spacing i bildsektionen.
+- Förbättrad felhantering kring bildkomprimering, uppladdning och tolkning av JSON-svar från servern.
 
 ## [3.1.0] – 2025
 
